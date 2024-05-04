@@ -108,9 +108,34 @@ public class Gragh {
 //
 //    }
 //
-//    int[] BellmanFord() {
-//
-//    }
+boolean BellmanFord(int source, int[] cost, int[] parents) {
+    Arrays.fill(cost, Integer.MAX_VALUE);
+    cost[source] = 0;
+    parents[source] = -1;
+
+    for (int i = 1; i < NoVertices; i++) {
+        for (int j = 0; j < NoVertices; j++) {
+            for (Pair<Integer, Integer> p : graghArrayList[j]) {
+                if (cost[j] != Integer.MAX_VALUE && cost[p.v] > cost[j] + p.w) {
+                    cost[p.v] = cost[j] + p.w;
+                    parents[p.v] = j;
+                }
+            }
+        }
+    }
+
+    // Check for negative cycles
+    for (int j = 0; j < NoVertices; j++) {
+        for (Pair<Integer, Integer> p : graghArrayList[j]) {
+            if (cost[j] != Integer.MAX_VALUE && cost[p.v] > cost[j] + p.w) {
+                // Negative cycle detected
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
 //
 //    int getSize() {
 //        return NoVertices;

@@ -11,6 +11,7 @@ public class Main {
 //            String path = sc.nextLine();
 
             Gragh g = new Gragh("a.txt");
+            Gragh v = new Gragh("a.txt");
 
             int parent[]=new int[g.NoVertices];
             int cost[] = new int[g.NoVertices];
@@ -18,12 +19,30 @@ public class Main {
             System.out.print(" Enter  the source node:  ");
             int source = sc.nextInt();
             g.Dijkstra(source,cost,parent);
+            System.out.println(" shortest path from "  +source+  " to node 1      "+cost[1]);
+            System.out.println(" shortest path from"+source+" to node 2      "+cost[2]);
+            System.out.println(" shortest path from"+source+" to node 6       "+cost[6]);
+            System.out.println(" shortest path from"+source+" to node 4       "+cost[4]);
+            System.out.println(" shortest path from"+source+" to node 8       "+cost[8]);
+            System.out.println(" shortest path from"+source+" to node 9       "+cost[9]);
 
 
-            System.out.println(" shortest path from"+source+" to node 50"+cost[50]);
-            System.out.println(" shortest path from"+source+" to node 32"+cost[32]);
-            System.out.println(" shortest path from"+source+" to node 232"+cost[232]);
-            System.out.println(" shortest path from"+source+" to node 23"+cost[23]);
+            boolean k= v.BellmanFord(source,cost,parent);
+
+            System.out.println("  ---------------------------------------------------------------------     ");
+
+          if(k){
+            System.out.println(" shortest path from "  +source+  " to node 1      "+cost[1]);
+            System.out.println(" shortest path from"+source+" to node 2      "+cost[2]);
+            // System.out.println(" shortest path from"+source+" to node 8      "+cost[5]);
+            // System.out.println(" shortest path from"+source+" to node 9      "+cost[9]);
+
+          }
+          else{
+            System.out.println(" there is negative cycles");
+          }
+
+
 //            System.out.println(Arrays.toString(cost) +"  cost ");
 //            System.out.println(Arrays.toString(parent)+"  parent ");
 
