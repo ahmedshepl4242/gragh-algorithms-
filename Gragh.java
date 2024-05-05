@@ -10,6 +10,7 @@ public class Gragh {
 
     int NoVertices;
     int NoEdges;
+    final int INF=100000000;
 
     public Gragh(String pathFile) {
         try {
@@ -134,7 +135,52 @@ boolean BellmanFord(int source, int[] cost, int[] parents) {
         }
     }
 
+
     return true;
+}
+boolean floydWarshall(int[][] matrix_cost,int predecessors [][]) {
+    
+    for (int i = 0; i < NoVertices; i++) {
+        Arrays.fill(matrix_cost[i], INF);
+        Arrays.fill(predecessors[i], -1);
+    }
+    for (int i = 0; i < graghArrayList.length; i++) {
+        ArrayList<Pair<Integer, Integer>> list = graghArrayList[i];
+        for (Pair<Integer, Integer> pair : list) {
+            Integer first=i;
+            Integer second = pair.v;
+            Integer cost = pair.w;
+            matrix_cost[first][second]=cost;
+            predecessors[first][second]=first;
+        }
+    }
+   
+    int matrix[][] = new int[NoVertices][NoVertices];
+    int i, j, k;
+
+    for (i = 0; i < NoVertices; i++)
+      for (j = 0; j < NoVertices; j++)
+        matrix[i][j] = matrix_cost[i][j];
+
+    for (k = 0; k < NoVertices; k++) {
+      for (i = 0; i < NoVertices; i++) {
+        for (j = 0; j < NoVertices; j++) {
+          if (matrix[i][k] + matrix[k][j] < matrix[i][j])
+            matrix[i][j] = matrix[i][k] + matrix[k][j];
+            predecessors[i][j]=predecessors[k][j];
+        }
+      }
+    }
+
+    for (int ii = 0; ii < NoVertices; ii++) {
+        if (matrix[ii][ii] < 0) {
+            return false;
+        }
+    }
+    return true;
+
+
+
 }
 //
 //    int getSize() {
@@ -142,3 +188,4 @@ boolean BellmanFord(int source, int[] cost, int[] parents) {
 //    }
 
 }
+
