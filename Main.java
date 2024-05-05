@@ -12,6 +12,7 @@ public class Main {
 
             Gragh g = new Gragh("a.txt");
             Gragh v = new Gragh("a.txt");
+            Gragh F = new Gragh("a.txt");
 
             int parent[]=new int[g.NoVertices];
             int cost[] = new int[g.NoVertices];
@@ -21,10 +22,10 @@ public class Main {
             g.Dijkstra(source,cost,parent);
             System.out.println(" shortest path from "  +source+  " to node 1      "+cost[1]);
             System.out.println(" shortest path from"+source+" to node 2      "+cost[2]);
-            System.out.println(" shortest path from"+source+" to node 6       "+cost[6]);
-            System.out.println(" shortest path from"+source+" to node 4       "+cost[4]);
-            System.out.println(" shortest path from"+source+" to node 8       "+cost[8]);
-            System.out.println(" shortest path from"+source+" to node 9       "+cost[9]);
+            // System.out.println(" shortest path from"+source+" to node 6       "+cost[6]);
+            // System.out.println(" shortest path from"+source+" to node 4       "+cost[4]);
+            // System.out.println(" shortest path from"+source+" to node 8       "+cost[8]);
+            // System.out.println(" shortest path from"+source+" to node 9       "+cost[9]);
 
 
             boolean k= v.BellmanFord(source,cost,parent);
@@ -41,7 +42,20 @@ public class Main {
           else{
             System.out.println(" there is negative cycles");
           }
-
+          int [][] mcost=new int[F.NoVertices][F.NoVertices];
+          int[][]pre=new int[F.NoVertices][F.NoVertices];
+          if(F.floydWarshall(mcost, pre))
+          {
+            for(int i=0;i<F.NoVertices;i++)
+            {
+              System.out.println("floyd-warshall from "+source+" to "+i+"="+(mcost[source][i]==F.INF?"INF":mcost[source][i]));
+            } 
+          }
+        else
+        {
+          System.out.println(" there is negative cycles");
+        }
+           
 
 //            System.out.println(Arrays.toString(cost) +"  cost ");
 //            System.out.println(Arrays.toString(parent)+"  parent ");

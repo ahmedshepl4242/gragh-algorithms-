@@ -145,8 +145,11 @@ boolean floydWarshall(int[][] matrix_cost,int predecessors [][]) {
         Arrays.fill(predecessors[i], -1);
     }
     for (int i = 0; i < graghArrayList.length; i++) {
+        
         ArrayList<Pair<Integer, Integer>> list = graghArrayList[i];
+
         for (Pair<Integer, Integer> pair : list) {
+
             Integer first=i;
             Integer second = pair.v;
             Integer cost = pair.w;
