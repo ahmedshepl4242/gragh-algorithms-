@@ -18,13 +18,14 @@ public class Main {
             System.out.println(" number of nodes is "+g.NoVertices);
             System.out.print(" Enter  the source node:  ");
             int source = sc.nextInt();
+
             g.Dijkstra(source,cost,parent);
             System.out.println(" shortest path from "  +source+  " to node 1      "+cost[1]);
             System.out.println(" shortest path from"+source+" to node 2      "+cost[2]);
-            System.out.println(" shortest path from"+source+" to node 6       "+cost[6]);
-            System.out.println(" shortest path from"+source+" to node 4       "+cost[4]);
-            System.out.println(" shortest path from"+source+" to node 8       "+cost[8]);
-            System.out.println(" shortest path from"+source+" to node 9       "+cost[9]);
+            // System.out.println(" shortest path from"+source+" to node 6       "+cost[6]);
+            // System.out.println(" shortest path from"+source+" to node 4       "+cost[4]);
+            // System.out.println(" shortest path from"+source+" to node 8       "+cost[8]);
+            // System.out.println(" shortest path from"+source+" to node 9       "+cost[9]);
 
 
             boolean k= v.BellmanFord(source,cost,parent);
@@ -39,7 +40,7 @@ public class Main {
 
           }
           else{
-            System.out.println(" there is negative cycles");
+            System.out.println(" there is a negative cycles");
           }
 
 
