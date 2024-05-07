@@ -135,10 +135,10 @@ boolean BellmanFord(int source, long[] cost, int[] parents) {
 
     return true;
 }
-boolean floydWarshall(long[][] matrix_cost,int predecessors [][]) {
+boolean floydWarshall(long[][] matrix,int predecessors [][]) {
     
     for (int i = 0; i < NoVertices; i++) {
-        Arrays.fill(matrix_cost[i], INF);
+        Arrays.fill(matrix, INF);
         Arrays.fill(predecessors[i], -1);
     }
     for (int i = 0; i < graghArrayList.length; i++) {
@@ -150,21 +150,13 @@ boolean floydWarshall(long[][] matrix_cost,int predecessors [][]) {
             Integer first=i;
             Integer second = pair.v;
             Integer cost = pair.w;
-            matrix_cost[first][second]=cost;
+            matrix[first][second]=cost;
             predecessors[first][second]=first;
         }
     }
-   
-    long matrix[][] = new long[NoVertices][NoVertices];
-    int i, j, k;
-
-    for (i = 0; i < NoVertices; i++)
-      for (j = 0; j < NoVertices; j++)
-        matrix[i][j] = matrix_cost[i][j];
-
-    for (k = 0; k < NoVertices; k++) {
-      for (i = 0; i < NoVertices; i++) {
-        for (j = 0; j < NoVertices; j++) {
+    for (int k = 0; k < NoVertices; k++) {
+      for (int i = 0; i < NoVertices; i++) {
+        for (int j = 0; j < NoVertices; j++) {
           if (matrix[i][k] + matrix[k][j] < matrix[i][j])
             matrix[i][j] = matrix[i][k] + matrix[k][j];
             predecessors[i][j]=predecessors[k][j];
@@ -178,9 +170,6 @@ boolean floydWarshall(long[][] matrix_cost,int predecessors [][]) {
         }
     }
     return true;
-
-
-
 }
 //
 //    int getSize() {
