@@ -44,17 +44,17 @@ public class Main {
           }
           long [][] mcost=new long[F.NoVertices][F.NoVertices];
           int[][]pre=new int[F.NoVertices][F.NoVertices];
-          if(F.floydWarshall(mcost, pre))
-          {
-            for(int i=0;i<F.NoVertices;i++)
-            {
-              System.out.println("floyd-warshall from "+source+" to "+i+"="+(mcost[source][i]==F.INF?"INF":mcost[source][i]));
-            } 
-          }
-        else
-        {
-          System.out.println(" there is negative cycles");
-        }
+//          if(F.floydWarshall(mcost, pre))
+//          {
+//            for(int i=0;i<F.NoVertices;i++)
+//            {
+//              System.out.println("floyd-warshall from "+source+" to "+i+"="+(mcost[source][i]==F.INF?"INF":mcost[source][i]));
+//            }
+//          }
+//        else
+//        {
+//          System.out.println(" there is negative cycles");
+//        }
            
 
 //            System.out.println(Arrays.toString(cost) +"  cost ");

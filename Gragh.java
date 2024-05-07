@@ -135,10 +135,10 @@ boolean BellmanFord(int source, long[] cost, int[] parents) {
 
     return true;
 }
-boolean floydWarshall(long[][] matrix,int predecessors [][]) {
+boolean floydWarshall(int src,long[][] matrix,int predecessors [][]) {
     
     for (int i = 0; i < NoVertices; i++) {
-        Arrays.fill(matrix, INF);
+        Arrays.fill(matrix[i], INF);
         Arrays.fill(predecessors[i], -1);
     }
     for (int i = 0; i < graghArrayList.length; i++) {
