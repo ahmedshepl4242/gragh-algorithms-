@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -15,7 +14,7 @@ public class Main {
             Gragh F = new Gragh("a.txt");
 
             int parent[]=new int[g.NoVertices];
-            int cost[] = new int[g.NoVertices];
+            long cost[] = new long[g.NoVertices];
             System.out.println(" number of nodes is "+g.NoVertices);
             System.out.print(" Enter  the source node:  ");
             int source = sc.nextInt();
@@ -43,7 +42,7 @@ public class Main {
           else{
             System.out.println(" there is a negative cycles");
           }
-          int [][] mcost=new int[F.NoVertices][F.NoVertices];
+          long [][] mcost=new long[F.NoVertices][F.NoVertices];
           int[][]pre=new int[F.NoVertices][F.NoVertices];
           if(F.floydWarshall(mcost, pre))
           {

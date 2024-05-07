@@ -69,17 +69,14 @@ public class Gragh {
     }
 
 
-    void Dijkstra(int source, int[] cost, int[] parents) {
+    void Dijkstra(int source, long[] cost, int[] parents) {
 
-//        int vis[] = new int[NoVertices];
-//        cost = new int[NoVertices];
-//        parents = new int[NoVertices];
 
         PriorityQueue<Pair<Integer, Integer>> q = new PriorityQueue<>((p1, p2) -> p1.w - p2.w);
         q.add(new Pair(source, 0));
         parents[source] = 0;
 
-        Arrays.fill(cost, Integer.MAX_VALUE);
+        Arrays.fill(cost, Long.MAX_VALUE);
         cost[source] = 0;
 
         while (!q.isEmpty()) {
@@ -109,7 +106,7 @@ public class Gragh {
 //
 //    }
 //
-boolean BellmanFord(int source, int[] cost, int[] parents) {
+boolean BellmanFord(int source, long[] cost, int[] parents) {
     Arrays.fill(cost, Integer.MAX_VALUE);
     cost[source] = 0;
     parents[source] = -1;
@@ -138,7 +135,7 @@ boolean BellmanFord(int source, int[] cost, int[] parents) {
 
     return true;
 }
-boolean floydWarshall(int[][] matrix_cost,int predecessors [][]) {
+boolean floydWarshall(long[][] matrix_cost,int predecessors [][]) {
     
     for (int i = 0; i < NoVertices; i++) {
         Arrays.fill(matrix_cost[i], INF);
@@ -158,7 +155,7 @@ boolean floydWarshall(int[][] matrix_cost,int predecessors [][]) {
         }
     }
    
-    int matrix[][] = new int[NoVertices][NoVertices];
+    long matrix[][] = new long[NoVertices][NoVertices];
     int i, j, k;
 
     for (i = 0; i < NoVertices; i++)

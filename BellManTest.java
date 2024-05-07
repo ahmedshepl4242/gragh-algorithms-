@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
 
-public class DikistraTest {
+public class BellManTest {
 
     public void readFromOutFile(String path, long cost[], int n) {
         try {
@@ -32,7 +32,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
 
         readFromOutFile("./tests/1.out", cost, g.NoVertices);
     }
@@ -44,7 +44,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
 
         readFromOutFile("./tests/2.out", cost, g.NoVertices);
     }
@@ -56,7 +56,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
 
         readFromOutFile("./tests/3.out", cost, g.NoVertices);
     }
@@ -68,7 +68,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
 
         readFromOutFile("./tests/4.out", cost, g.NoVertices);
     }
@@ -80,7 +80,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
 
         readFromOutFile("./tests/5.out", cost, g.NoVertices);
     }
@@ -92,7 +92,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
         readFromOutFile("./tests/10.out", cost, g.NoVertices);
     }
 
@@ -103,7 +103,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
         readFromOutFile("./tests/9.out", cost, g.NoVertices);
     }
     @Test
@@ -113,7 +113,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
         readFromOutFile("./tests/18.out", cost, g.NoVertices);
     }
     @Test
@@ -123,7 +123,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
         readFromOutFile("./tests/17.out", cost, g.NoVertices);
     }
     @Test
@@ -133,7 +133,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
         readFromOutFile("./tests/23.out", cost, g.NoVertices);
     }
     @Test
@@ -143,7 +143,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
         readFromOutFile("./tests/22.out", cost, g.NoVertices);
     }
     @Test
@@ -153,7 +153,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
         readFromOutFile("./tests/20.out", cost, g.NoVertices);
     }
     @Test
@@ -163,7 +163,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
         readFromOutFile("./tests/19.out", cost, g.NoVertices);
     }
     @Test
@@ -173,7 +173,7 @@ public class DikistraTest {
         long cost[] = new long[g.NoVertices];
         System.out.println(" number of nodes is " + g.NoVertices);
         System.out.print(" Enter  the source node:  ");
-        g.Dijkstra(1, cost, parent);
+        g.BellmanFord(1, cost, parent);
         readFromOutFile("./tests/21.out", cost, g.NoVertices);
     }
 
